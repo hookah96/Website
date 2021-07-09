@@ -142,12 +142,12 @@ const AboutBtnLink = styled.a`
 // implementation languages
 const languages = [
   {
-    code: 'en',
-    country_code: 'gb',
-  },
-  {
     code: 'gr',
     country_code: 'gr',
+  },
+  {
+    code: 'en',
+    country_code: 'gb',
   },
 ];
 
