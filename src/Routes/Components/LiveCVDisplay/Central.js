@@ -64,11 +64,11 @@ function DisplayResAni() {
             />
           </a>
         </div>
-        <a href='#' class='scroll-up'>
-          <i class='fa fa-angle-double-up'></i>
+        <a href='#' className='scroll-up'>
+          <i className='fa fa-angle-double-up'></i>
         </a>
       </div>
-      <hr class='liveCV-central-headdown'></hr>
+      <hr className='liveCV-central-headdown'></hr>
     </section>
   );
 }
@@ -200,11 +200,11 @@ function ShiftCard({ src, alt, details }) {
 function Central() {
   return (
     <div>
-      <h3 class='liveCV-central-head'>
-        <i class='fas fa-clipboard-check'></i> We built all what you need,
+      <h3 className='liveCV-central-head'>
+        <i className='fas fa-clipboard-check'></i> We built all what you need,
         please select one
       </h3>
-      <hr class='liveCV-central-headdown'></hr>
+      <hr className='liveCV-central-headdown'></hr>
 
       <DisplayResAni />
       <ShiftPictures />

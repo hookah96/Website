@@ -38,13 +38,13 @@ function MariaTemp2() {
 // Language implementation
 const languages = [
   {
-    code: "gr",
-    country_code: "gr",
-  },
-  {
     code: "en",
     country_code: "gb",
-  },
+  },  
+{
+    code: "gr",
+    country_code: "gr",
+  }
 ];
 function Header() {
    // language implementation
@@ -55,7 +55,7 @@ function Header() {
    // language implementation
    useEffect(() => {
     document.body.dir = currentLanguage.dir || "ltr";
-    document.title = t("app_title");
+    document.title = t("appTitle");
   }, [currentLanguage, t]);
 
   return (
@@ -153,7 +153,7 @@ function Maindesc() {
           height="300"
           autoplay="true"
           muted
-          class="CVMarTemp2-video"
+          className="CVMarTemp2-video"
           source
           src={MarVid}
           type="video/mp4"
@@ -262,7 +262,7 @@ function Footer() {
           </ul>
         </div>
         <div className="CVMarTemp2-footer-cpw">
-          <p class="CVMarTemp2-footer-cpwcopyright">
+          <p className="CVMarTemp2-footer-cpwcopyright">
             Copyright &copy; 2021 by Hellen Elien.
           </p>
         </div>

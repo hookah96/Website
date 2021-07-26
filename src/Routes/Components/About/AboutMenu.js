@@ -142,73 +142,75 @@ const AboutBtnLink = styled.a`
 // implementation languages
 const languages = [
   {
-    code: 'gr',
-    country_code: 'gr',
-  },
-  {
-    code: 'en',
-    country_code: 'gb',
-  },
-];
-
+    code: "en",
+    country_code: "gb",
+  },  
+{
+    code: "gr",
+    country_code: "gr",
+  }
+  ];
+  
 function AboutMenu({ aboutToggle }) {
-  const currentLanguageCode = cookies.get('i18next') || 'en';
-  const currentLanguage = languages.find((l) => l.code === currentLanguageCode);
-  const { t } = useTranslation();
-
-  useEffect(() => {
-    document.body.dir = currentLanguage.dir || 'ltr';
-    document.title = t('app_title');
-  }, [currentLanguage, t]);
-
-  return (
-    <>
-      <AboutNav>
-        <AboutNavContainer>
-          <AboutNavLogo to='/'>
-            {/* Eksi-Nous */}
-            <img src={EksiNousLogo} />
-          </AboutNavLogo>
-          <AboutMobileIcon onClick={aboutToggle}>
-            <AboutFaBarsToggle />
-          </AboutMobileIcon>
-          <AboutNavMenu>
-            <AboutNavItem>
-              <AboutNavLinks to='/'>Home</AboutNavLinks>
-            </AboutNavItem>
-            <AboutNavItem>
-              <AboutNavLinks to='/signUp'>Sign Up</AboutNavLinks>
-            </AboutNavItem>
-            <AboutNavItem>
-              <AboutNavLinks to='/login'>Sign In</AboutNavLinks>
-            </AboutNavItem>
-            <div className='language-select'>
-              <div className='dropdown'>
-                <ul
-                  className='dropdown-menu-about'
-                  aria-labelledby='dropdownMenuButton'
-                >
-                  {languages.map(({ code, country_code }) => (
-                    <li key={country_code}>
-                      <a
-                        href='#'
-                        className={classNames('dropdown-item', {
-                          disabled: currentLanguageCode === code,
-                        })}
-                        onClick={() => {
-                          i18next.changeLanguage(code);
-                        }}
-                      >
-                        <span
-                          className={`flag-icon flag-icon-${country_code} mx-4`}
-                          style={{
-                            opacity: currentLanguageCode === code ? 0.7 : 1,
-                          }}
-                        ></span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+    const currentLanguageCode = cookies.get("i18next") || "en";
+    const currentLanguage = languages.find((l) => l.code === currentLanguageCode);
+    const { t } = useTranslation();
+  
+    useEffect(() => {
+      document.body.dir = currentLanguage.dir || "ltr";
+      document.title = t("appTitle");
+    }, [currentLanguage, t]);
+  
+    return (
+      <>
+        <AboutNav>
+          <AboutNavContainer>
+            <AboutNavLogo to="/">
+              {/* Eksi-Nous */}
+              <img src={EksiNousLogo} />
+            </AboutNavLogo>
+            <AboutMobileIcon  onClick={aboutToggle}>
+              <AboutFaBarsToggle />
+            </AboutMobileIcon >
+            <AboutNavMenu>
+              <AboutNavItem>
+                <AboutNavLinks href="/">Home</AboutNavLinks>
+              </AboutNavItem>
+              <AboutNavItem>
+                <AboutNavLinks href="/signUp">Sign Up</AboutNavLinks>
+              </AboutNavItem>
+              <AboutNavItem>
+                <AboutNavLinks href="/login">Sign In</AboutNavLinks>
+              </AboutNavItem>
+              <div className="language-select">
+            
+                  <div className="dropdown">
+                    <ul
+                      className="dropdown-menu-about"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      {languages.map(({ code, country_code }) => (
+                        <li key={country_code}>
+                          <a
+                            href="#"
+                            className={classNames("dropdown-item", {
+                              disabled: currentLanguageCode === code,
+                            })}
+                            onClick={() => {
+                              i18next.changeLanguage(code);
+                            }}
+                          >
+                            <span
+                              className={`flag-icon flag-icon-${country_code} mx-4`}
+                              style={{
+                                opacity: currentLanguageCode === code ? 0.7 : 1,
+                              }}
+                            ></span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
               </div>
             </div>
             <AboutNavBtn>

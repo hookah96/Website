@@ -12,14 +12,17 @@ const axios = require('axios').default;
 function Home() {
   const [countries, setCountries] = useState([]);
 
-  /*
-  const fetchCountries = async() => {
-    try{
-      setCountries(await (await axios.get('http://localhost:8080/countries')).data);
-    } catch(error){
+  const fetchCountries = async () => {
+    try {
+      setCountries(
+        await (
+          await axios.get('http://localhost:8080/countries')
+        ).data
+      );
+    } catch (error) {
       console.log(`${error}`);
     }
-  } */
+  };
 
   const postCountry = async (newCountry) => {
     try {
