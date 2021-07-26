@@ -1,14 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import User from './SignUp/UserSignUp';
+// import UserSignUp from './SignUp/UserSignUp';
 
-function UserSignUp() {
-  return (
-    <Router>
-      <User />
-    </Router>
-  );
+function User() {
+  return <Router>{/* <UserSignUp /> */}</Router>;
 }
 
-export default UserSignUp;
+export default User;

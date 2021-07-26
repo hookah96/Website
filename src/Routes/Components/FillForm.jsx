@@ -1,8 +1,14 @@
-import React from "react";
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Menu from './Home/Menu';
+import Central from './FillForm/Central';
 
 const FillForm = () => {
   return (
-    <Central />
+    <Router>
+      <Menu />
+      <Central />
+    </Router>
   );
 };
 
